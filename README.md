@@ -1,38 +1,23 @@
 # Real-Vehicle Experimental Data
 
-This repository provides the real-vehicle experimental data used in Chapter 5 of the associated manuscript on robust guaranteed-cost path tracking control for steer-by-wire vehicles.
-
-The data were collected from a dSPACE real-time control and data-acquisition platform during single-lane-change (SLC) and double-lane-change (DLC) experiments. The original experimental records are provided as MATLAB `.mat` files.
-
+This repository provides real-vehicle experimental data on robust guaranteed-cost path tracking control for Steer-by-Wire Vehicles, Chapter 5 of the manuscript titled "Robust Guaranteed-Cost Path Tracking Control for Steer-by-Wire Vehicles Considering Communication Delay and Actuator Dynamics". The data was collected from the dSPACE real-time control and data acquisition platform during single-lane change (SLC) and two-lane change (DLC) experiments. The original experimental records are provided as MATLAB `.mat` files.
 ## Data Format
 
-Each `.mat` file contains dSPACE-exported time-series data. In the original data structure, the key signals are stored in `filename.Y(i).Data`, where `filename` denotes the loaded data object.
-
-The key signal correspondence is:
-
-```matlab
-ephi    = filename.Y(2).Data;   % heading error, rad
-ey      = filename.Y(3).Data;   % lateral error, m
-delta_f = filename.Y(7).Data;   % steering angle, raw unit from recorder
-vx      = filename.Y(8).Data;   % longitudinal velocity, m/s
-vy      = filename.Y(9).Data;   % lateral velocity, m/s
-x       = filename.Y(10).Data;  % longitudinal/global x-position, m
-y       = filename.Y(11).Data;  % lateral/global y-position, m
-```
-
+Each `.mat` file contains dSPACE-exported time-series data. In the original data structure, the key signals are stored in `filename.Y(i).Data` and `filename.X.Data`.
 ## MATLAB Loading Example
 
 ```matlab
-data = load('example.mat');
+data = load('rec1_017.mat');
 
 % Replace "filename" with the actual variable name stored in the MAT file
-ephi    = filename.Y(2).Data;
-ey      = filename.Y(3).Data;
-delta_f = filename.Y(7).Data;
-vx      = filename.Y(8).Data;
-vy      = filename.Y(9).Data;
-x       = filename.Y(10).Data;
-y       = filename.Y(11).Data;
+t       = rec1_017.X.Data;
+ephi    = rec1_017.Y(2).Data;
+ey      = rec1_017.Y(3).Data;
+delta_f = rec1_017.Y(7).Data;
+vx      = rec1_017.Y(8).Data;
+vy      = rec1_017.Y(9).Data;
+x       = rec1_017.Y(10).Data;
+y       = rec1_017.Y(11).Data;
 ```
 
 ## Experimental Data Index
@@ -41,17 +26,17 @@ The following `.mat` file IDs correspond to the real-vehicle experimental datase
 
 | Manuscript case | MAT file IDs | Description |
 |---|---:|---|
-| DLC, 40 km/h | 17, 25, 33 | Three-controller experimental data |
-| DLC, 25 km/h | 15, 24, 31 | Three-controller experimental data |
-| SLC, 25 km/h | 8, 21, 27 | Three-controller experimental data |
-| SLC, 40 km/h | 19, 22, 28 | Three-controller experimental data |
-| SLC, 40 km/h | 13, 23 | Two-controller experimental data |
+| DLC, 40 km/h | 17, 25, 33 | DADGC, LQR and Baseline experimental data |
+| DLC, 25 km/h | 15, 24, 31 | DADGC, LQR and Baseline experimental data |
+| SLC, 25 km/h | 8, 21, 27 | DADGC, LQR and Baseline experimental data |
+| SLC, 40 km/h | 19, 22, 28 | DADGC, LQR and Baseline experimental data |
+| SLC, 40 km/h | 13, 23 | DADGC and LQR controller experimental data |
 
 ## Notes
 
 - `ephi` is the heading error and is stored in radians.
 - `ey` is the lateral tracking error and is stored in meters.
-- `delta_f` is the front steering angle signal recorded by the dSPACE system. Its unit follows the raw recorder configuration and should be interpreted according to the original calibration setting.
+- `delta_f` is the actual front wheel steering angle signal recorded by the dSPACE system.
 - `vx` and `vy` are the longitudinal and lateral vehicle velocities, respectively.
 - `x` and `y` are the recorded vehicle position signals used for trajectory analysis.
 
