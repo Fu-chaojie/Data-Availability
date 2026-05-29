@@ -14,6 +14,4 @@ The data were recorded during real-vehicle tests and exported as MATLAB `.mat` f
 ## Data Format
 
 All data files are provided in MATLAB `.mat` format and can be loaded using:
-
-# matlab
 data = load('filename.mat');
