@@ -98,4 +98,4 @@ The real-vehicle experimental data supporting the findings of the associated stu
 
 ## Citation
 
-If you use these data, please cite the associated manuscript.
+If you use this data, please specify the GitHub data address.
