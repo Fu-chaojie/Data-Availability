@@ -79,8 +79,8 @@ y       = filename.Y(15).Data;
 | DLC       |           50 | LQR        |    062 |
 | DLC       |           50 | LQR        |    064 |
 | DLC       |           50 | LQR        |    076 |
-| DLC       |           50 | LPV-MPC    |    334 |
-| DLC       |           50 | LPV-MPC    |    335 |
+| DLC       |           50 | LPV-MPC    |    592 |
+| DLC       |           50 | LPV-MPC    |    593 |
 
 
 
