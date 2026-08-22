@@ -30,7 +30,7 @@ vy      = filename.Y(13).Data;
 x       = filename.Y(14).Data;
 y       = filename.Y(15).Data;
 ```
-## For FODPT data 
+## For FOPDT data 
 Data ID: 111, 112, 113, 116, 117, 118, 119, 121, 124
 ```matlab
 t       = filename.X.Data';
