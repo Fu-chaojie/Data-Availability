@@ -1,6 +1,6 @@
 # Real-Vehicle Experimental Data
 
-This repository provides real-vehicle experimental data on robust guaranteed-cost path tracking control for Steer-by-Wire Vehicles, Section 5 of the manuscript titled "Robust Guaranteed-Cost Path Tracking Control for Steer-by-Wire Vehicles Considering Communication Delay and Actuator Dynamics". The data was collected from the dSPACE real-time control and data acquisition platform during single-lane change (SLC) and two-lane change (DLC) experiments. The original experimental records are provided as MATLAB `.mat` files.
+This repository provides real-vehicle experimental data on robust guaranteed-cost path tracking control for Steer-by-Wire Vehicles, Section 5 of the manuscript titled "Robust Guaranteed-Cost Path Tracking Control for Steer-by-Wire Vehicles Considering Communication Delay and Actuator Dynamics". The data were collected from the dSPACE real-time control and data-acquisition platform during single-lane-change (SLC) and double-lane-change (DLC) experiments.
 ## Data Format
 
 Each `.mat` file contains dSPACE-exported time-series data. In the original data structure, the key signals are stored in `filename.Y(i).Data` and `filename.X.Data`.
@@ -40,10 +40,10 @@ delta_f = filename.Y(7).Data';
 ## For HIL computational efficiency data 
 Data ID: 002, 003, 004, 005
 ```matlab
-t = rec1_005.X.Data';
-Overrun_Count = rec1_005.Y(5).Data;
-Task_Call_Counter = rec1_005.Y(6).Data';
-timearround = rec1_005.Y(7).Data';
+t = filename.X.Data';
+Overrun_Count = filename.Y(5).Data;
+Task_Call_Counter = filename.Y(6).Data';
+turnaround_time = filename.Y(7).Data';
 ```
 
 ## Experimental Data Index
