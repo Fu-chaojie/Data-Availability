@@ -6,7 +6,9 @@ This repository provides real-vehicle experimental data on guaranteed-cost path 
 Each `.mat` file contains dSPACE-exported time-series data. In the original data structure, the key signals are stored in `filename.Y(i).Data` and `filename.X.Data`.
 ## MATLAB Loading Example
 
+## For path-tracking
 ```matlab
+
 % Replace "filename" with the actual variable name stored in the MAT file
 
 % For DADGC, LQR and DF Controller 
@@ -28,6 +30,22 @@ vy      = filename.Y(13).Data;
 x       = filename.Y(14).Data;
 y       = filename.Y(15).Data;
 ```
+## For FODPT data 
+Data ID: 111, 112, 113, 116, 117, 118, 119, 121, 124
+```matlab
+t       = filename.X.Data';
+delta_c = filename.Y(1).Data';
+delta_f = filename.Y(7).Data';
+```
+## For HIL computational efficiency data 
+Data ID: 002, 003, 004, 005
+```matlab
+t = rec1_005.X.Data';
+Overrun_Count = rec1_005.Y(5).Data;
+Task_Call_Counter = rec1_005.Y(6).Data';
+timearround = rec1_005.Y(7).Data';
+```
+
 ## Experimental Data Index
 | Manoeuvre | Speed (km/h) | Controller | filename ID |
 | --------- | --------: | ---------- | -----: |
